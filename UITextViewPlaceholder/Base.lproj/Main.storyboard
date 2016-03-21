@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UITextViewPlaceholder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,8 +16,36 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KKQ-0o-nsK" userLabel="PlaceholderTextView" customClass="PlaceholderUITextView" customModule="UITextViewPlaceholder" customModuleProvider="target">
+                                <rect key="frame" x="20" y="40" width="560" height="540"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Enter your data here ..."/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1K6-0B-Vci" userLabel="BottomView">
+                                <rect key="frame" x="0.0" y="600" width="600" height="0.0"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="ubN-D2-nhz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="KKQ-0o-nsK" secondAttribute="trailing" constant="20" id="Fiq-gg-Q1q"/>
+                            <constraint firstItem="1K6-0B-Vci" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HFR-ri-Sm0"/>
+                            <constraint firstItem="KKQ-0o-nsK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="KGw-Cc-77e"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1K6-0B-Vci" secondAttribute="bottom" id="NOC-UY-IDB"/>
+                            <constraint firstAttribute="trailing" secondItem="1K6-0B-Vci" secondAttribute="trailing" id="Rrw-R6-Faw"/>
+                            <constraint firstItem="KKQ-0o-nsK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="ZjP-fh-2YF"/>
+                            <constraint firstItem="1K6-0B-Vci" firstAttribute="top" secondItem="KKQ-0o-nsK" secondAttribute="bottom" constant="20" id="dAu-mY-fex"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bottomHeight" destination="ubN-D2-nhz" id="57l-i9-beL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

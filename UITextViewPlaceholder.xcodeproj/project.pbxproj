@@ -12,6 +12,8 @@
 		117287571C9F18890052527B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 117287551C9F18880052527B /* Main.storyboard */; };
 		117287591C9F18890052527B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 117287581C9F18890052527B /* Assets.xcassets */; };
 		1172875C1C9F18890052527B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1172875A1C9F18890052527B /* LaunchScreen.storyboard */; };
+		117287661C9F19270052527B /* PlaceholderUITextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 117287631C9F19270052527B /* PlaceholderUITextView.xib */; };
+		117287681C9F19270052527B /* PlaceholderUITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117287651C9F19270052527B /* PlaceholderUITextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		117287581C9F18890052527B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1172875B1C9F18890052527B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1172875D1C9F18890052527B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		117287631C9F19270052527B /* PlaceholderUITextView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceholderUITextView.xib; sourceTree = "<group>"; };
+		117287651C9F19270052527B /* PlaceholderUITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderUITextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +61,21 @@
 				117287511C9F18880052527B /* AppDelegate.swift */,
 				117287531C9F18880052527B /* ViewController.swift */,
 				117287551C9F18880052527B /* Main.storyboard */,
+				117287691C9F9F670052527B /* PlaceholderView */,
 				117287581C9F18890052527B /* Assets.xcassets */,
 				1172875A1C9F18890052527B /* LaunchScreen.storyboard */,
 				1172875D1C9F18890052527B /* Info.plist */,
 			);
 			path = UITextViewPlaceholder;
+			sourceTree = "<group>";
+		};
+		117287691C9F9F670052527B /* PlaceholderView */ = {
+			isa = PBXGroup;
+			children = (
+				117287631C9F19270052527B /* PlaceholderUITextView.xib */,
+				117287651C9F19270052527B /* PlaceholderUITextView.swift */,
+			);
+			name = PlaceholderView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +139,7 @@
 				1172875C1C9F18890052527B /* LaunchScreen.storyboard in Resources */,
 				117287591C9F18890052527B /* Assets.xcassets in Resources */,
 				117287571C9F18890052527B /* Main.storyboard in Resources */,
+				117287661C9F19270052527B /* PlaceholderUITextView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +152,7 @@
 			files = (
 				117287541C9F18880052527B /* ViewController.swift in Sources */,
 				117287521C9F18880052527B /* AppDelegate.swift in Sources */,
+				117287681C9F19270052527B /* PlaceholderUITextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +302,7 @@
 				117287621C9F18890052527B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
