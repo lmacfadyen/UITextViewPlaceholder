@@ -44,7 +44,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bottomHeight" destination="ubN-D2-nhz" id="57l-i9-beL"/>
+                        <outlet property="bottomHeight" destination="ubN-D2-nhz" id="W1Q-La-IMV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

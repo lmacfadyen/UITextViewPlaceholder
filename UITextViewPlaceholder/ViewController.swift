@@ -25,12 +25,10 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
-        
-    }
+        }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
@@ -46,7 +44,6 @@ class ViewController: UIViewController {
                 // bottomHeight matches keyboard height
                 bottomHeight.constant = keyboardSize.height
                 view.setNeedsLayout()
-                
             }
         }
     }
@@ -55,7 +52,6 @@ class ViewController: UIViewController {
         // No keyboard, so bottomHeight back to 0
         bottomHeight.constant = 0.0
         view.setNeedsLayout()
-        
     }
     
 }
