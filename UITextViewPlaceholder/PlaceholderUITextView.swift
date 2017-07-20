@@ -26,15 +26,15 @@ import UIKit
             return
         }
         view.frame = bounds
-        view.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(view)
         textView.delegate = self
     }
     
     func loadViewFromNib() -> UIView? {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "PlaceholderUITextView", bundle: bundle)
-        let view = nib.instantiateWithOwner(self, options: nil)[0] as? UIView
+        let view = nib.instantiate(withOwner: self, options: nil)[0] as? UIView
         return view
     }
     
@@ -48,12 +48,12 @@ import UIKit
         commonXibSetup()
     }
     
-    func textViewDidChange(textView: UITextView) {
-        if !textView.hasText() {
-            labelPlaceholder?.hidden = false
+    func textViewDidChange(_ textView: UITextView) {
+        if !textView.hasText {
+            labelPlaceholder?.isHidden = false
         }
         else {
-            labelPlaceholder?.hidden = true
+            labelPlaceholder?.isHidden = true
         }
     }
 }

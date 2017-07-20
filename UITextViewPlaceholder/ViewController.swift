@@ -21,26 +21,26 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         view.endEditing(true)
-        super.touchesBegan(touches, withEvent: event)
+        super.touchesBegan(touches, with: event)
     }
     
     // Bottom height constraint value is based on whether keyboard is showing
-    func keyboardWillShow(notification: NSNotification) {
+    func keyboardWillShow(_ notification: Notification) {
         if let userInfo = notification.userInfo {
-            if let keyboardSize =  (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            if let keyboardSize =  (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
                 // bottomHeight matches keyboard height
                 bottomHeight.constant = keyboardSize.height
                 view.setNeedsLayout()
@@ -48,7 +48,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func keyboardWillHide(notification: NSNotification){
+    func keyboardWillHide(_ notification: Notification){
         // No keyboard, so bottomHeight back to 0
         bottomHeight.constant = 0.0
         view.setNeedsLayout()
