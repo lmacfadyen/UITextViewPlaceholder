@@ -38,13 +38,11 @@ class ViewController: UIViewController {
     }
     
     // Bottom height constraint value is based on whether keyboard is showing
+    // Note: Using UIKeyboardFrameEndUserInfoKey for iOS 11 and Swift 4
     func keyboardWillShow(_ notification: Notification) {
-        if let userInfo = notification.userInfo {
-            if let keyboardSize =  (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-                // bottomHeight matches keyboard height
-                bottomHeight.constant = keyboardSize.height
-                view.setNeedsLayout()
-            }
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            bottomHeight.constant = keyboardSize.height
+            view.setNeedsLayout()
         }
     }
     
