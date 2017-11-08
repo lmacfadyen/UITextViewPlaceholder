@@ -42,14 +42,12 @@ class ViewController: UIViewController {
     func keyboardWillShow(_ notification: Notification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             bottomHeight.constant = keyboardSize.height
-            view.setNeedsLayout()
         }
     }
     
     func keyboardWillHide(_ notification: Notification){
         // No keyboard, so bottomHeight back to 0
         bottomHeight.constant = 0.0
-        view.setNeedsLayout()
     }
     
 }
